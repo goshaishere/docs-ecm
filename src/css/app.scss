@@ -1,0 +1,122 @@
+$bottom-margin: 20px;
+
+.document-list-page,
+.document-page {
+    padding: 20px;
+}
+
+.document-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.document-list-page__input,
+.document-list-page__input > div,
+.document-list-page__input > div > div,
+.document-list-page__input > div > div > div {
+    height: 40px;
+}
+
+.document-list-page {
+    table {
+        thead {
+            background-color: #cfcfcf;
+            tr {
+                th {
+                    font-weight: 600;
+                }
+            }
+        }
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background-color: #f6f6f6; // Background color for odd rows
+                }
+            }
+        }
+    }
+
+    
+    &__actions {
+        justify-content: space-between;
+        margin-bottom: $bottom-margin;
+        gap: 20px;
+    }
+
+    &__filters {
+        gap: 20px;
+    }
+
+    &__title {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    &__btn {
+        height: 40px;
+    }
+}
+
+.document-page {
+    display: flex;
+    justify-content: center;
+
+    &__go-back-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    &__attr-description {
+        max-width: 50%;
+        text-align: right;
+    }
+
+    &__card {
+        width: 100%;
+        max-width: 550px;
+    }
+}
+
+.columns-tuning-dialog {
+    padding: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+
+    &-thumb {
+        background-color: #a7a7a7;
+        border-radius: 6px;
+
+        &:hover {
+            background-color: $primary;
+        }
+    }
+
+    &-track {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    &-button {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 884px) {
+    .document-page__go-back-btn {
+      position: static;
+      top: auto;
+      left: auto;
+      width: 100%;
+      max-width: 550px;
+
+      button {
+        width: 100%;
+    }
+    }
+}
